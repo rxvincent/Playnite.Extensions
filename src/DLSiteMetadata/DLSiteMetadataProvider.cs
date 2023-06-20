@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -281,12 +281,6 @@ public class DLSiteMetadataProvider : OnDemandMetadataProvider
         if (result is null) return base.GetDescription(args);
 
         return result.DescriptionHtml ?? "";
-    }
-
-    public override IEnumerable<MetadataProperty> GetAgeRatings(GetMetadataFieldArgs args)
-    {
-        // have
-        return base.GetAgeRatings(args);
     }
 
     public override int? GetCommunityScore(GetMetadataFieldArgs args)
