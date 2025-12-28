@@ -143,10 +143,10 @@ public class Scrapper
                             }
                         }
                         else if (headerName.Equals("販売日", StringComparison.OrdinalIgnoreCase) ||
-                                 headerName.Equals("贩卖日", StringComparison.OrdinalIgnoreCase) ||
+                                 headerName.Equals("发售日", StringComparison.OrdinalIgnoreCase) ||
                                  headerName.Equals("販賣日", StringComparison.OrdinalIgnoreCase))
                         {
-                            var sDate = dataElement.Text().CustomTrim();
+                            var sDate = dataElement.Text().CustomTrim().Split(" ".First()).First();
                             if (DateTime.TryParseExact(sDate, "yyyy年MM月dd日", null, DateTimeStyles.None, out var dateReleased))
                             {
                                 res.DateReleased = dateReleased;
